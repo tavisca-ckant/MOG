@@ -3,10 +3,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh script: '''
+                bat script: '''
                     echo "I am in build step!"
                     chmod 777 gradlew
-                    ./gradlew build
+                    gradlew.bat build
                 ''',
             label: "Building Project"
             }
@@ -14,9 +14,9 @@ pipeline {
         stage('Test')
         {
             steps {
-                sh script: '''
+                bat script: '''
                     echo "I am in Test step"
-                    ./gradlew test
+                    gradlew.bat test
                 ''',
             label: "Running Unit Test Cases"
             }
@@ -24,7 +24,7 @@ pipeline {
         stage('Static Code Analysis')
         {
             steps {
-                sh script: '''
+                bat script: '''
                     echo "I am in Sonarqube scan"
                 ''',
             label: "Running Sonarqube Scan"
@@ -33,7 +33,7 @@ pipeline {
         stage('Build DockerImage')
         {
             steps {
-                sh script: '''
+                bat script: '''
                     echo "I am Building DockerImage ="
                 ''',
             label: "Building Docker Image"
@@ -42,16 +42,11 @@ pipeline {
         stage('Publish DockerImage')
         {
             steps {
-                sh script: '''
+                bat script: '''
                     echo "I am Publishing DockerImage ="
                 ''',
             label: "Publishing Docker Image"
             }
         }
     }
-    post {
-        always {
-    		deleteDir()
-		}
-	}
 }
