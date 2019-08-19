@@ -1,0 +1,70 @@
+pipeline {
+    agent any
+    environment {
+    registry = "cchandrakant/merchantofgalaxy"
+    registryCredential = '4719b28e-f297-47d2-b71e-0a1642a9ef0e'
+}
+    stages {
+        stage('Build') {
+            steps {
+                sh script: '''
+                    echo "I am in build step!"
+                    chmod 777 gradlew
+                    ./gradlew build
+                ''',
+            label: "Building Project"
+            }
+        }
+        stage('Test')
+        {
+            steps {
+                sh script: '''
+                    echo "I am in Test step"
+                    ./gradlew test
+                ''',
+            label: "Running Unit Test Cases"
+            }
+        }
+        stage('Static Code Analysis')
+        {
+            steps {
+                sh script: '''
+                    echo "I am in Sonarqube scan"
+                    
+                    ./gradlew sonarqube \
+                    -Dsonar.projectKey=merchantofgalaxy1 \
+                    -Dsonar.organization=ckant \
+                     -Dsonar.host.url=https://sonarcloud.io \
+                     -Dsonar.login=92cb17bf23cbb852bd0f16fa1c908f6e4bcf6929
+                ''',
+            label: "Running Sonarqube Scan"
+            }
+        }
+        stage('Build DockerImage')
+        {
+            steps {
+                sh script: '''
+                    echo "I am Building DockerImage ="
+                    docker build -t mog:1 .
+                    docker tag mog:1 cchandrakant/merchantofgalaxy1
+                ''',
+            label: "Building Docker Image"
+            }
+        }
+        stage('Publish DockerImage')
+        {
+            steps {
+               
+     withDockerRegistry([ credentialsId: "4719b28e-f297-47d2-b71e-0a1642a9ef0e" , url:""]) {
+          sh 'docker push cchandrakant/merchantofgalaxy'
+        
+                }           
+            }
+        }
+    }
+    post {
+        always {
+            deleteDir()
+        }
+    }
+}

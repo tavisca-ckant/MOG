@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a13a0825-5536-47be-a725-d21df129afb2" name="Default Changelist" comment="" />
+    <list default="true" id="a13a0825-5536-47be-a725-d21df129afb2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.infra/jenkins/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/.infra/jenkins/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +21,41 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="chandrakant &lt;ckant@tavisca.in&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1POxpGwXi19DLX5mLt0AjbXvLi0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/com/tavisca" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\chandrakant\IdeaProjects\MerchantOfGalxy\src\test\java\com\tavisca" />
+      <recent name="C:\Users\chandrakant\IdeaProjects\MerchantOfGalxy\src\main\java\com\tavisca" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -33,7 +69,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ValidMapTest.validMapForGalacticWordOfRoman">
+  <component name="RunManager" selected="Gradle.RomanToIntegerTest.romanToInteger">
+    <configuration name="RomanToIntegerTest.romanToInteger" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.tavisca.RomanToIntegerTest.romanToInteger&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="ValidMapTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -76,6 +132,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RomanToIntegerTest.romanToInteger" />
         <item itemvalue="Gradle.ValidMapTest.validMapForGalacticWordOfRoman" />
         <item itemvalue="Gradle.ValidMapTest" />
       </list>
@@ -92,6 +149,48 @@
       <option name="presentableId" value="Default" />
       <updated>1565759124574</updated>
     </task>
+    <task id="LOCAL-00001" summary="Updated Jenkins">
+      <created>1566208894555</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566208894555</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added post">
+      <created>1566209128628</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566209128628</updated>
+    </task>
+    <task id="LOCAL-00003" summary="jenkins command updated">
+      <created>1566209512948</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566209512948</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Updated Jenkins" />
+    <MESSAGE value="added post" />
+    <MESSAGE value="jenkins command updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="jenkins command updated" />
   </component>
 </project>
