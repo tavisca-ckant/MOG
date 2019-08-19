@@ -5,7 +5,6 @@ pipeline {
             steps {
                 bat script: '''
                     echo "I am in build step!"
-                    chmod 777 gradlew
                     gradlew.bat build
                 ''',
             label: "Building Project"
@@ -26,6 +25,7 @@ pipeline {
             steps {
                 bat script: '''
                     echo "I am in Sonarqube scan"
+                    gradlew.bat sonarqube
                 ''',
             label: "Running Sonarqube Scan"
             }
@@ -35,6 +35,7 @@ pipeline {
             steps {
                 bat script: '''
                     echo "I am Building DockerImage ="
+                    docker build
                 ''',
             label: "Building Docker Image"
             }
