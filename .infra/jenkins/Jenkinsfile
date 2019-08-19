@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+    registry = "cchandrakant/merchantofgalaxy"
+    registryCredential = '4719b28e-f297-47d2-b71e-0a1642a9ef0e'
+}
     stages {
         stage('Build') {
             steps {
@@ -42,6 +46,7 @@ pipeline {
                 sh script: '''
                     echo "I am Building DockerImage ="
                     docker build -t mog:1 .
+                    docker tag mog:1 cchandrakant/merchantofgalaxy1
                 ''',
             label: "Building Docker Image"
             }
@@ -49,15 +54,12 @@ pipeline {
         stage('Publish DockerImage')
         {
             steps {
-                bat script: '''
-                    echo "I am Publishing DockerImage ="
-                    docker tag mog:1 cchandrakant/merchantofgalaxy1
-                    docker login -u cchandrakant -p tic@11TOE
-                    docker push cchandrakant/merchantofgalaxy1
-                ''',
-            label: "Publishing Docker Image"
+               
+     withDockerRegistry([ credentialsId: "4719b28e-f297-47d2-b71e-0a1642a9ef0e" , url:""]) {
+          sh 'docker push cchandrakant/merchantofgalaxy'
+        
+                }           
             }
-        }
     }
     post {
         always {
