@@ -30,7 +30,7 @@ pipeline {
             steps {
                 sh script: '''
                     echo "I am in Sonarqube scan"
-                    chmod 777 gradlew
+                    
                     ./gradlew sonarqube \
                     -Dsonar.projectKey=merchantofgalaxy1 \
                     -Dsonar.organization=ckant \
