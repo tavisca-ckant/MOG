@@ -39,7 +39,7 @@ pipeline {
         stage('Build DockerImage')
         {
             steps {
-                bat script: '''
+                sh script: '''
                     echo "I am Building DockerImage ="
                     docker build -t mog:1 .
                 ''',
